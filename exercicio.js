@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const csvparse = require('csv-parse/lib/sync');
+const { Console } = require('console');
 
 // Le cada linha do arquivo csv como um objeto e armazena no array 'app'
 let apps = csvparse(fs.readFileSync('./gplaydata.csv', 'utf-8'), {
@@ -40,10 +41,7 @@ function Reduce() {
 function Filtter() {
 
     const ScoreMaior = apps.filter(scr => scr.score > 4);
-    console.log('Score Maior:', ScoreMaior);
-
-    
-    
+    console.log('Score Maior:', ScoreMaior);   
     
 }
 
@@ -51,9 +49,26 @@ function Filtter() {
 
 // EXERCICIO 3: use map() para mudar o atributo appname para lowerCase
 
+function Map() {
+    const AppName = apps.map(elem => {
+        
+        elem.appname = elem.appname.toLowerCase();
+        
+        return elem;
+    });
+
+    //const AppName = apps.map(atb => atb.appname.tolowerCase());
+    console.log(AppName);
+        
+     
+}
+
+
+
 function main () {
-    Reduce();
-    Filtter();
+    //Reduce();
+    //Filtter();
+    Map();
 }
 
 main()
