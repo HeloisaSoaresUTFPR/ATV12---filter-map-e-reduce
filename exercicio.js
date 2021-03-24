@@ -37,12 +37,23 @@ function Reduce() {
 
 
 // EXERCICIO 2: use filter() para selecionar somente apps com score maior que quatro (> 4) 
+function Filtter() {
+
+    const ScoreMaior = apps.filter(scr => scr.score > 4);
+    console.log('Score Maior:', ScoreMaior);
+
+    
+    
+    
+}
+
 
 
 // EXERCICIO 3: use map() para mudar o atributo appname para lowerCase
 
 function main () {
     Reduce();
+    Filtter();
 }
 
 main()
